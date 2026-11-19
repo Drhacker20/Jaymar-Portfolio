@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jaymar Daris – Aspiring Web Developer</title>
+<meta name="description" content="Portfolio of Jaymar Daris, 4th-year BSIT student (Web System and Technology) at NEUST. Web and mobile projects built with PHP, MySQL, Ionic, Angular, Firebase and Node.js.">
+<meta name="theme-color" content="#080b14">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111631'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' font-family='sans-serif' font-weight='800' fill='%23eceefb'%3EJD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/photo.webp" type="image/webp">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Schibsted+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#080b14;--white:#111631;--ink:#eceefb;--ink2:#171d3d;--mute:#98a0bd;--line:rgba(255,255,255,.11);--acc:#7b8bff;--tint:rgba(123,139,255,.16);--ok:#1fbf75;
+--disp:'Schibsted Grotesk','Hanken Grotesk',system-ui,sans-serif;--body:'Hanken Grotesk',system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--disp);margin:0;letter-spacing:-.03em;line-height:1.05}
+a{color:inherit}
+ul{list-style:none;margin:0;padding:0}
+img{display:block;max-width:100%;height:auto}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:112px 0}
+h2{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:800;margin-bottom:56px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border-radius:999px;border:1.5px solid var(--ink);text-decoration:none;font:600 .98rem var(--body);background:transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:none}
+.btn.main{background:var(--ink);color:var(--paper)}.btn.main:hover{background:var(--acc);border-color:var(--acc);color:#080b14}
+.btn:not(.main):hover{background:var(--ink);color:var(--paper)}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:16px;padding:calc(12px + env(safe-area-inset-top,0px)) max(24px,calc((100vw - 1120px)/2 + 24px)) 12px;background:rgba(8,11,20,.88);border-bottom:1px solid var(--line)}
+.logo{font:800 1.25rem var(--disp);letter-spacing:-.03em;text-decoration:none}.logo b{color:var(--acc)}
+.links{display:flex;gap:2px;margin-left:auto}
+.links a{padding:8px 14px;border-radius:999px;text-decoration:none;font-size:.93rem;font-weight:500;color:var(--mute);white-space:nowrap;transition:color .2s,background .2s}
+.links a:hover{color:var(--ink)}.links a.on{color:var(--ink);background:var(--tint)}
+.hire{padding:9px 20px;font-size:.92rem}
+@media(max-width:860px){nav{flex-wrap:wrap;row-gap:6px}.links{order:3;width:100%;overflow-x:auto;margin:0;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.hire{margin-left:auto}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:130px 0 70px;background:radial-gradient(60% 55% at 85% 12%,rgba(80,100,255,.22),transparent 70%),radial-gradient(45% 45% at 5% 95%,rgba(110,90,255,.14),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border:1px solid var(--line);border-radius:999px;background:var(--white);font-size:.88rem;font-weight:500;margin-bottom:28px}
+#bg{position:fixed;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(31,191,117,.18)}
+.hero h1{font-size:clamp(3.6rem,10vw,8.2rem);font-weight:800;letter-spacing:-.055em;line-height:.9}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 i{display:block;font-style:normal;transform:translateY(105%);animation:rise 1s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 span:nth-child(2) i{animation-delay:.12s}
+@keyframes rise{to{transform:none}}
+.role{font:500 clamp(1.25rem,2.4vw,1.6rem) var(--disp);letter-spacing:-.02em;margin-top:26px}
+.lede{max-width:30em;color:var(--mute);font-size:1.1rem;margin:14px 0 34px}
+.fade{opacity:0;animation:fade .9s forwards}
+.d1{animation-delay:.55s}.d2{animation-delay:.7s}.d3{animation-delay:.85s}
+@keyframes fade{to{opacity:1}}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+/* id card */
+.passw{display:flex;flex-direction:column;align-items:center;width:100%;max-width:340px;margin:0 auto;perspective:900px}
+.cord{width:2px;height:64px;background:linear-gradient(transparent,var(--ink))}
+.pass{width:100%;padding:16px 16px 22px;border-radius:28px;background:var(--white);border:1px solid var(--line);box-shadow:0 24px 60px -18px rgba(70,90,255,.4);transition:transform .4s;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;will-change:transform}
+.slot{display:block;width:54px;height:9px;border-radius:99px;background:var(--paper);border:1px solid var(--line);margin:0 auto 14px}
+.pic{aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.pic img{width:100%;height:100%;object-fit:cover;object-position:center bottom;pointer-events:none}
+.pass h3{font-size:1.45rem;font-weight:700;margin:18px 6px 0}
+.pic{border-color:rgba(255,255,255,.14)}.pass p{margin:4px 6px 0;color:var(--mute);font-size:.95rem}
+.hint{margin-top:16px;color:var(--mute);font-size:.8rem}.hint .m{display:none}@media(hover:none){.hint .d{display:none}.hint .m{display:inline}}
+/* about */
+.split{display:grid;grid-template-columns:1fr 1.4fr;gap:56px}
+.split h2{margin:0}
+.about p{margin:0 0 18px;font-size:1.2rem;color:var(--mute);max-width:34em}
+.about p:first-child{color:var(--ink);font-size:1.35rem}
+/* rows (skills + education) */
+.row{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--line);align-items:baseline}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row h3{font-size:1.25rem;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips li{padding:6px 15px;border-radius:999px;border:1px solid var(--line);background:var(--white);font-size:.92rem;font-weight:500}
+.edu-t{font:700 1.5rem var(--disp);letter-spacing:-.025em;margin-bottom:6px}
+.edu p{margin:0;color:var(--mute)}.edu p.first{color:var(--ink);font-size:1.1rem}
+/* projects */
+.dark{background:rgba(13,18,40,.86);color:var(--ink);border-radius:40px 40px 0 0}
+.dark h2{color:var(--ink)}
+.prow{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center;padding:36px 0}
+.prow+.prow{border-top:1px solid var(--line)}
+.prow:nth-child(even) .panel{order:2}
+.panel{display:grid;place-items:center;width:100%;padding:28px;border:0;border-radius:26px;background:var(--ink2);cursor:zoom-in}
+.panel img{border-radius:12px;box-shadow:0 20px 50px -12px rgba(0,0,0,.7);max-height:400px;width:auto;transition:transform .35s}
+.panel:hover img{transform:scale(1.025)}
+.tall .panel img{max-height:440px}
+.role-tag{display:inline-block;font-weight:600;font-size:.9rem;color:#aab2ff;margin-bottom:12px}
+.prow h3{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;margin-bottom:14px}
+.prow p{margin:0 0 20px;color:var(--mute);max-width:32em}
+.prow .chips li{background:transparent;border-color:var(--line);color:var(--ink)}
+/* certificates */
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:36px 24px}
+.certs .timg{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f3f4f7;cursor:zoom-in;aspect-ratio:4/3;margin-bottom:14px;transition:transform .25s,box-shadow .25s}
+.certs .timg:hover{transform:translateY(-4px);box-shadow:0 18px 36px -16px rgba(70,90,255,.55)}
+.certs .timg img{width:100%;height:100%;object-fit:contain}
+.certs h3{font-size:1.02rem;font-weight:700;line-height:1.3;letter-spacing:-.015em}
+.certs p{margin:6px 0 0;color:var(--mute);font-size:.88rem;line-height:1.5}
+.resume{margin-top:64px;border:1px solid var(--line);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;padding:32px 36px;border-radius:26px;background:var(--tint)}
+.resume h3{font-size:1.6rem;font-weight:800}.resume p{margin:6px 0 0;color:var(--mute)}
+.resume .btns{display:flex;flex-wrap:wrap;gap:10px}
+/* contact */
+.mail{display:block;font:800 clamp(1.5rem,4vw,2.5rem) var(--disp);letter-spacing:-.03em;text-decoration:none;word-break:break-word;margin-top:8px;border-bottom:3px solid var(--acc);width:fit-content;padding-bottom:4px;transition:color .2s}
+.mail:hover{color:var(--acc)}
+.contact p{margin:0;color:var(--mute)}
+form{display:grid;gap:14px}
+input,textarea{width:100%;padding:15px 18px;border-radius:14px;border:1px solid var(--line);background:var(--white);color:var(--ink);font:inherit;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px var(--tint)}
+textarea{resize:vertical}
+footer{padding:36px 0;color:var(--mute);font-size:.9rem;text-align:center;border-top:1px solid var(--line)}
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:50;display:none;place-items:center;background:rgba(8,10,24,.94);padding:20px;cursor:zoom-out}#lb.on{display:grid}
+#lb img{max-width:100%;max-height:100%;border-radius:12px;background:#fff}
+#lbx{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));right:16px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#fff;font-size:1.8rem;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0}#lbx:hover{background:var(--acc)}
+@media(max-width:860px){.hero-grid,.split,.prow{grid-template-columns:1fr}.hero-grid{gap:44px}.prow .panel,.prow:nth-child(even) .panel{order:0}.prow{gap:26px}.row{grid-template-columns:1fr;gap:12px}.split{gap:32px}}
+@media(max-width:600px){section{padding:76px 0}.hero{padding-top:150px}.certs{grid-template-columns:repeat(2,1fr);gap:28px 14px}.certs h3{font-size:.9rem}.certs p{font-size:.78rem}.panel{padding:18px}.resume{padding:26px 22px}.dark{border-radius:28px 28px 0 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fade{opacity:1}.hero h1 i{transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<nav aria-label="Sections"><a class="logo" href="#home">jaymar<b>.dev</b></a>
+<div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></div>
+<a class="btn main hire" href="mailto:darisjaymar15@gmail.com">Hire me</a></nav>
+<main>
+<header class="hero" id="home"><div class="wrap hero-grid">
+ <div>
+  <span class="status fade"><i></i>Open to opportunities</span>
+  <h1><span><i>Jaymar</i></span><span><i>Daris.</i></span></h1>
+  <p class="role fade d1">Aspiring web developer</p>
+  <p class="lede fade d2">4th-year BSIT student at Nueva Ecija University of Science and Technology, building web and mobile apps that work.</p>
+  <div class="cta fade d3"><a class="btn main" href="#projects">See my projects</a><a class="btn" href="#contact">Message me</a></div>
+ </div>
+ <div class="passw fade d2"><i class="cord"></i>
+  <div class="pass" id="pass"><span class="slot"></span>
+   <div class="pic"><img src="assets/photo.webp" width="640" height="774" decoding="async" fetchpriority="high" alt="Jaymar Daris"></div>
+   <h3>Jaymar Daris</h3><p>Aspiring web developer</p>
+  </div>
+  <small class="hint"><span class="d">Right-click and hold to tilt</span><span class="m">Press and hold to tilt</span></small></div>
+</div></header>
+
+<section id="about"><div class="wrap split about">
+  <h2>Learning by building.</h2>
+  <div>
+    <p>I’m Jaymar, an Information Technology student who enjoys turning ideas into working websites and apps. I learn fastest by making real things, breaking them, and fixing them.</p>
+    <p>I’m looking for opportunities to grow as a developer, work with a team, and ship projects people actually use.</p>
+  </div>
+</div></section>
+
+<section id="skills" style="padding-top:0"><div class="wrap">
+  <h2>Skills and tools.</h2>
+  <div class="row"><h3>Frontend</h3><ul class="chips"><li>HTML</li><li>CSS</li><li>Angular</li><li>TypeScript</li><li>Ionic</li></ul></div>
+  <div class="row"><h3>Backend and databases</h3><ul class="chips"><li>PHP</li><li>Node.js</li><li>MySQL</li><li>Firebase</li><li>Supabase</li></ul></div>
+  <div class="row"><h3>Tools</h3><ul class="chips"><li>VS Code</li><li>Android Studio</li><li>XAMPP</li><li>ChatGPT</li><li>Gemini</li><li>Claude</li></ul></div>
+</div></section>
+
+<section id="education" style="padding-top:0"><div class="wrap">
+  <h2>Education.</h2>
+  <div class="row edu"><h3>2023 to 2027 (expected)</h3><div>
+    <p class="edu-t">Bachelor of Science in Information Technology</p>
+    <p class="first">Nueva Ecija University of Science and Technology</p>
+    <p>Major in Web System and Technology. Currently in 4th year.</p></div></div>
+</div></section>
+
+<section id="projects" class="dark"><div class="wrap">
+  <h2>Projects.</h2>
+<article class="prow"><button class="timg panel" type="button" aria-label="View Jilan Moto POS screenshot"><img src="assets/proj-jilan-moto-pos.webp" width="1000" height="582" loading="lazy" decoding="async" alt="Jilan Moto dashboard"></button><div class="ptxt"><span class="role-tag">Co-developer</span><h3>Jilan Moto POS</h3><p>A point-of-sale and inventory system for a motor shop. Admins manage products and stock, process sales at the POS, review sales history, handle payroll, and track performance with weekly and monthly reports on a dashboard.</p><ul class="chips"><li>PHP</li><li>HTML</li><li>CSS</li><li>MySQL</li></ul></div></article>
+<article class="prow"><button class="timg panel" type="button" aria-label="View Daily Activity Control screenshot"><img src="assets/proj-daily-activity-control.webp" width="1000" height="474" loading="lazy" decoding="async" alt="Daily Activity Control panel"></button><div class="ptxt"><span class="role-tag">Developer</span><h3>Daily Activity Control</h3><p>A web panel that records user activity in a database. Each day a user can save one login record, one logout record, and profile updates, then review everything on a records page.</p><ul class="chips"><li>PHP</li><li>HTML</li><li>CSS</li><li>MySQL</li></ul></div></article>
+<article class="prow tall"><button class="timg panel" type="button" aria-label="View PowerSaver screenshot"><img src="assets/proj-powersaver.webp" width="403" height="842" loading="lazy" decoding="async" alt="PowerSaver app screen"></button><div class="ptxt"><span class="role-tag">Developer</span><h3>PowerSaver</h3><p>A mobile app with simple ways to cut your electricity bill. Tips are grouped by room (living room, kitchen, bedroom, office) and each one shows how much it can save. It runs without a database.</p><ul class="chips"><li>Ionic</li></ul></div></article>
+<article class="prow tall"><button class="timg panel" type="button" aria-label="View LakbayLokal screenshot"><img src="assets/proj-lakbaylokal.webp" width="382" height="846" loading="lazy" decoding="async" alt="LakbayLokal app screen"></button><div class="ptxt"><span class="role-tag">Co-developer</span><h3>LakbayLokal</h3><p>A tourist app for exploring places, food spots, and entertainment in Gabaldon, Nueva Ecija. Visitors can search, save favorites, book, verify their email, and pay, while admins manage listings and bookings.</p><ul class="chips"><li>Ionic</li><li>Angular</li><li>TypeScript</li><li>Firebase</li><li>Node.js</li></ul></div></article>
+</div></section>
+
+<section id="certificates"><div class="wrap">
+  <h2>Certificates.</h2>
+  <ul class="certs">
+<li><button class="timg" type="button" aria-label="View certificate: Network Addressing and Basic Troubleshooting"><img src="assets/cert-1.webp" width="1000" height="676" loading="lazy" decoding="async" alt="Certificate: Network Addressing and Basic Troubleshooting"></button><h3>Network Addressing and Basic Troubleshooting</h3><p>Cisco Networking Academy, DICT-ITU DTC Initiative<br>Nov 16, 2026</p></li>
+<li><button class="timg" type="button" aria-label="View certificate: Introduction to Cybersecurity"><img src="assets/cert-2.webp" width="1000" height="662" loading="lazy" decoding="async" alt="Certificate: Introduction to Cybersecurity"></button><h3>Introduction to Cybersecurity</h3><p>Cisco Networking Academy, DICT-ITU DTC Initiative<br>Oct 27, 2026</p></li>
+<li><button class="timg" type="button" aria-label="View certificate: Image Design Create: Exploring the World of Multimedia"><img src="assets/cert-3.webp" width="1000" height="708" loading="lazy" decoding="async" alt="Certificate: Image Design Create: Exploring the World of Multimedia"></button><h3>Image Design Create: Exploring the World of Multimedia</h3><p>Ethel Programming Computer Programming Services, webinar<br>Sep 27, 2026</p></li>
+<li><button class="timg" type="button" aria-label="View certificate: Digital Forensics: Digital Artifacts and Cyber Evidence"><img src="assets/cert-4.webp" width="1000" height="706" loading="lazy" decoding="async" alt="Certificate: Digital Forensics: Digital Artifacts and Cyber Evidence"></button><h3>Digital Forensics: Digital Artifacts and Cyber Evidence</h3><p>Investigation and Intelligence Training, Zoom<br>Aug 30, 2026</p></li>
+<li><button class="timg" type="button" aria-label="View certificate: Data Analytics Essentials"><img src="assets/cert-5.webp" width="1000" height="656" loading="lazy" decoding="async" alt="Certificate: Data Analytics Essentials"></button><h3>Data Analytics Essentials</h3><p>Cisco Networking Academy, DICT-ITU DTC Initiative<br>Aug 28, 2026</p></li>
+<li><button class="timg" type="button" aria-label="View certificate: Designing Interactive Websites with Multimedia and UI/UX Principles"><img src="assets/cert-6.webp" width="1000" height="708" loading="lazy" decoding="async" alt="Certificate: Designing Interactive Websites with Multimedia and UI/UX Principles"></button><h3>Designing Interactive Websites with Multimedia and UI/UX Principles</h3><p>Ethel Programming Computer Programming Services, webinar<br>Aug 21, 2026</p></li>
+<li><button class="timg" type="button" aria-label="View certificate: Everyday Cybersecurity: Protecting Data, Devices, and Digital Identity"><img src="assets/cert-7.webp" width="1000" height="708" loading="lazy" decoding="async" alt="Certificate: Everyday Cybersecurity: Protecting Data, Devices, and Digital Identity"></button><h3>Everyday Cybersecurity: Protecting Data, Devices, and Digital Identity</h3><p>Ethel Programming Computer Programming Services, webinar<br>Jul 26, 2026</p></li>
+<li><button class="timg" type="button" aria-label="View certificate: Digital Trust in the AI Era: Detecting Deepfakes and Strengthening Cybersecurity"><img src="assets/cert-8.webp" width="1000" height="539" loading="lazy" decoding="async" alt="Certificate: Digital Trust in the AI Era: Detecting Deepfakes and Strengthening Cybersecurity"></button><h3>Digital Trust in the AI Era: Detecting Deepfakes and Strengthening Cybersecurity</h3><p>DICT CALABARZON Regional Office, seminar<br>Jul 22, 2026</p></li>
+  </ul>
+  <div class="resume">
+    <div><h3>Resume</h3><p>Education, projects, and skills on one page.</p></div>
+    <div class="btns"><a class="btn main" href="resume.pdf" download="Jaymar-Daris-Resume.pdf">Download PDF</a><a class="btn" href="resume.pdf" target="_blank" rel="noopener">View online</a></div>
+  </div>
+</div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap split contact">
+  <div>
+    <h2 style="margin-bottom:28px">Let’s talk.</h2>
+    <p>Email</p><a class="mail" href="mailto:darisjaymar15@gmail.com">darisjaymar15@gmail.com</a>
+  </div>
+  <form id="f">
+    <input id="n" placeholder="Your name" aria-label="Your name" autocomplete="name" required>
+    <input id="e" type="email" placeholder="you@example.com" aria-label="Your email" autocomplete="email" required>
+    <textarea id="m" rows="5" placeholder="How can I help?" aria-label="Message" required></textarea>
+    <button class="btn main" type="submit">Prepare email</button>
+  </form>
+</div></section>
+</main>
+
+<div id="lb" role="dialog" aria-label="Image preview"><button id="lbx" type="button" aria-label="Close preview">×</button><img alt=""></div>
+<footer>© 2026 Jaymar Daris</footer>
+
+<script>
+(function(){
+  'use strict';
+  var d=document,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,$=function(id){return d.getElementById(id)};
+
+  // nav highlight
+  var links=[].slice.call(d.querySelectorAll('.links a'));
+  var so=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+  d.querySelectorAll('header[id],section[id]').forEach(function(s){so.observe(s)});
+
+  // lightbox
+  var lb=$('lb'),li=lb.querySelector('img'),lastBtn=null;
+  function closeLb(){lb.classList.remove('on');li.removeAttribute('src');if(lastBtn)lastBtn.focus()}
+  d.querySelectorAll('.timg').forEach(function(b){b.addEventListener('click',function(){
+    var im=b.querySelector('img');lastBtn=b;li.src=im.currentSrc||im.src;li.alt=im.alt;lb.classList.add('on');$('lbx').focus()})});
+  li.addEventListener('click',function(e){e.stopPropagation()});
+  lb.addEventListener('click',closeLb);
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))closeLb()});
+
+  // ID card tilt: right-click and hold (mouse) or press and hold (touch)
+  var ps=$('pass');
+  if(ps&&!reduce){
+    var on=false,timer=0,sx=0,sy=0,raf=0,lx=0,ly=0;
+    var cl=function(v){return Math.max(-.5,Math.min(.5,v))};
+    var apply=function(){raf=0;var r=ps.getBoundingClientRect();ps.style.transform='rotateY('+cl((lx-r.left)/r.width-.5)*26+'deg) rotateX('+(-cl((ly-r.top)/r.height-.5)*26)+'deg)'};
+    var tilt=function(e){lx=e.clientX;ly=e.clientY;if(!raf)raf=requestAnimationFrame(apply)};
+    var stop=function(){on=false;clearTimeout(timer);cancelAnimationFrame(raf);raf=0;ps.style.transform='';ps.style.transition=''};
+    ps.addEventListener('contextmenu',function(e){e.preventDefault()});
+    ps.addEventListener('pointerdown',function(e){
+      if(e.pointerType==='mouse'){if(e.button!==2)return;on=true;ps.setPointerCapture(e.pointerId);ps.style.transition='transform .08s';tilt(e)}
+      else{sx=e.clientX;sy=e.clientY;clearTimeout(timer);timer=setTimeout(function(){on=true;ps.style.transition='transform .08s';tilt({clientX:sx,clientY:sy});if(navigator.vibrate)navigator.vibrate(15)},250)}
+    });
+    ps.addEventListener('pointermove',function(e){
+      if(on)tilt(e);else if(e.pointerType!=='mouse'&&Math.hypot(e.clientX-sx,e.clientY-sy)>10)clearTimeout(timer)
+    });
+    ['pointerup','pointercancel','lostpointercapture'].forEach(function(t){ps.addEventListener(t,stop)});
+    ps.addEventListener('touchmove',function(e){if(on&&e.cancelable)e.preventDefault()},{passive:false});
+  }
+
+
+  // background: light 2D canvas (floating network + slowly turning wireframes). No libraries, no blur.
+  var cv=$('bg');
+  var saveData=navigator.connection&&navigator.connection.saveData;
+  if(cv&&!reduce&&!saveData){
+    var cx=cv.getContext('2d'),coarse=matchMedia('(pointer:coarse)').matches||innerWidth<760;
+    var W=0,H=0,dpr=1,running=false,last=0,frames=0,slow=0,mx=-999,my=-999;
+    var N=coarse?34:64,LINK=coarse?105:130,ps_=[],shapes=[];
+    var CUBE={v:[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]],e:[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]]};
+    var OCT={v:[[1.3,0,0],[-1.3,0,0],[0,1.3,0],[0,-1.3,0],[0,0,1.3],[0,0,-1.3]],e:[[0,2],[0,3],[0,4],[0,5],[1,2],[1,3],[1,4],[1,5],[2,4],[4,3],[3,5],[5,2]]};
+    var TET={v:[[1,1,1],[-1,-1,1],[-1,1,-1],[1,-1,-1]],e:[[0,1],[0,2],[0,3],[1,2],[2,3],[3,1]]};
+    function init(){
+      ps_=[];for(var i=0;i<N;i++)ps_.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.4+.5});
+      var defs=[[CUBE,.12,.2,70,.12],[OCT,.86,.45,80,.2],[TET,.2,.78,70,.16],[CUBE,.8,.92,50,.1],[OCT,.5,.12,46,.14]];
+      if(coarse)defs=defs.slice(0,3);
+      shapes=defs.map(function(d,i){return{g:d[0],fx:d[1],fy:d[2],sz:d[3]*(coarse?.7:1),par:d[4],ax:Math.random()*6,ay:Math.random()*6,sx:.003+i*.0006,sy:.004+i*.0005}})
+    }
+    function size(){dpr=coarse?1:Math.min(devicePixelRatio||1,1.25);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);init()}
+    var rt=0;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(size,150)});
+    if(!coarse)addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY},{passive:true});
+    function drawShape(s){
+      var span=H+240,y=(((s.fy*H-scrollY*s.par)%span)+span)%span-120,x=s.fx*W+(mx>-900?(mx/W-.5)*-24*s.par*8:0);
+      var ca=Math.cos(s.ax),sa=Math.sin(s.ax),cb=Math.cos(s.ay),sb=Math.sin(s.ay),pts=[];
+      for(var i=0;i<s.g.v.length;i++){var v=s.g.v[i],x1=v[0]*cb+v[2]*sb,z1=-v[0]*sb+v[2]*cb,y1=v[1]*ca-z1*sa,z2=v[1]*sa+z1*ca,f=300/(300+z2*s.sz*.6);pts.push([x+x1*s.sz*f,y+y1*s.sz*f])}
+      cx.beginPath();for(var j=0;j<s.g.e.length;j++){var a=pts[s.g.e[j][0]],b=pts[s.g.e[j][1]];cx.moveTo(a[0],a[1]);cx.lineTo(b[0],b[1])}cx.stroke()
+    }
+    function frame(now){
+      if(!running)return;requestAnimationFrame(frame);
+      var dt=now-last;if(dt<(coarse?33:22))return;last=now;
+      if(++frames>40){if(dt>50)slow++;else if(slow>0)slow--;if(slow>30){running=false;cv.style.display='none';return}}
+      cx.clearRect(0,0,W,H);
+      cx.strokeStyle='rgba(123,139,255,.3)';cx.lineWidth=1.2;
+      for(var k=0;k<shapes.length;k++){var s=shapes[k];s.ax+=s.sx;s.ay+=s.sy;drawShape(s)}
+      cx.fillStyle='rgba(190,200,255,.7)';cx.lineWidth=1;
+      for(var i=0;i<N;i++){
+        var p=ps_[i];p.x+=p.vx;p.y+=p.vy;
+        if(p.x<0)p.x=W;else if(p.x>W)p.x=0;if(p.y<0)p.y=H;else if(p.y>H)p.y=0;
+        cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();
+        for(var j=i+1;j<N;j++){var q=ps_[j],dx=p.x-q.x,dy=p.y-q.y,dd=dx*dx+dy*dy;
+          if(dd<LINK*LINK){cx.strokeStyle='rgba(123,139,255,'+(.22*(1-Math.sqrt(dd)/LINK))+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}
+      }
+    }
+    function play(){if(running||d.hidden)return;running=true;last=0;frames=0;requestAnimationFrame(frame)}
+    d.addEventListener('visibilitychange',function(){if(d.hidden)running=false;else play()});
+    size();play();
+  }
+
+  // contact form opens the visitor's email app
+  $('f').addEventListener('submit',function(ev){ev.preventDefault();
+    var n=$('n').value,e=$('e').value,m=$('m').value;
+    location.href='mailto:darisjaymar15@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(m+'\n\n'+n+' ('+e+')')});
+})();
+</script>
+</body>
+</html>
