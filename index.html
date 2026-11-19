@@ -139,7 +139,7 @@ footer{padding:36px 0;color:var(--mute);font-size:.9rem;text-align:center;border
    <div class="pic"><img src="assets/photo.webp" width="640" height="774" decoding="async" fetchpriority="high" alt="Jaymar Daris"></div>
    <h3>Jaymar Daris</h3><p>Aspiring web developer</p>
   </div>
-  <small class="hint"><span class="d">Right-click and hold to tilt</span><span class="m">Press and hold to tilt</span></small></div>
+  </div>
 </div></header>
 
 <section id="about"><div class="wrap split about">
@@ -235,9 +235,9 @@ footer{padding:36px 0;color:var(--mute);font-size:.9rem;text-align:center;border
     var apply=function(){raf=0;var r=ps.getBoundingClientRect();ps.style.transform='rotateY('+cl((lx-r.left)/r.width-.5)*26+'deg) rotateX('+(-cl((ly-r.top)/r.height-.5)*26)+'deg)'};
     var tilt=function(e){lx=e.clientX;ly=e.clientY;if(!raf)raf=requestAnimationFrame(apply)};
     var stop=function(){on=false;clearTimeout(timer);cancelAnimationFrame(raf);raf=0;ps.style.transform='';ps.style.transition=''};
-    ps.addEventListener('contextmenu',function(e){e.preventDefault()});
+
     ps.addEventListener('pointerdown',function(e){
-      if(e.pointerType==='mouse'){if(e.button!==2)return;on=true;ps.setPointerCapture(e.pointerId);ps.style.transition='transform .08s';tilt(e)}
+      if(e.pointerType==='mouse'){if(e.button!==0)return;on=true;ps.setPointerCapture(e.pointerId);ps.style.transition='transform .08s';tilt(e)}
       else{sx=e.clientX;sy=e.clientY;clearTimeout(timer);timer=setTimeout(function(){on=true;ps.style.transition='transform .08s';tilt({clientX:sx,clientY:sy});if(navigator.vibrate)navigator.vibrate(15)},250)}
     });
     ps.addEventListener('pointermove',function(e){
